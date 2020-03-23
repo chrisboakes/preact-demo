@@ -6,6 +6,7 @@ import Header from './header';
 // Code-splitting is automated for routes
 import Home from '../routes/home';
 import Politics from '../routes/politics';
+import News from '../routes/news';
 
 export default class App extends Component {
 	
@@ -25,6 +26,8 @@ export default class App extends Component {
 					<Home path="/" />
 					<Politics path="/politics/" />
 					<Politics path="/politics/:article" />
+					<News path="/news/" />
+					<News path="/news/:article" />
 				</Router>
 			</div>
 		);
