@@ -7,6 +7,7 @@ import Header from './header';
 import Home from '../routes/home';
 import Politics from '../routes/politics';
 import News from '../routes/news';
+import Article from '../routes/article';
 
 export default class App extends Component {
 	
@@ -25,9 +26,9 @@ export default class App extends Component {
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 					<Politics path="/politics/" />
-					<Politics path="/politics/:article" />
 					<News path="/news/" />
-					<News path="/news/:article" />
+					<Article path="/politics/:article" />
+					<Article path="/news/:article" />
 				</Router>
 			</div>
 		);
