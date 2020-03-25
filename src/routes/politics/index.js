@@ -7,7 +7,7 @@ export default class Politics extends Component {
 		const data = await res.json();
 		let content = '';
 
-		if (data.status === 200) {
+		if (res.status === 200) {
 			data.forEach( result => {
 				content += result.title;
 			});
