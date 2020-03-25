@@ -1,4 +1,8 @@
 .logo {
+	grid-column: 1/5;
+}
+
+.logo svg {
 	height: auto;
 	max-width: 285px;
 	width: 100%;
