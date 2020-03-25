@@ -1,4 +1,8 @@
-# preact-poc
+# Preact POC
+
+## Further research
+
+- Dynamic `<title>` and metadata
 
 ## CLI Commands
 
