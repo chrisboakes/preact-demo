@@ -1,4 +1,4 @@
-import style from "./logo.css";
+import style from "./index.css";
 
 export default () => (
 	<svg class={style.logo} xmlns="http://www.w3.org/2000/svg" aria-labelledby="site-logo-title" id="site-logo" viewBox="0 0 430 70">
