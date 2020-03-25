@@ -23,13 +23,15 @@ export default class App extends Component {
 		return (
 			<div id="app">
 				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Politics path="/politics/" />
-					<News path="/news/" />
-					<Article path="/politics/:article" />
-					<Article path="/news/:article" />
-				</Router>
+				<main>
+					<Router onChange={this.handleRoute}>
+						<Home path="/" />
+						<Politics path="/politics/" />
+						<News path="/news/" />
+						<Article path="/politics/:article" />
+						<Article path="/news/:article" />
+					</Router>
+				</main>
 			</div>
 		);
 	}
