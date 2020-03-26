@@ -5,27 +5,36 @@ export default class Politics extends Component {
 	async componentDidMount() {
 		const res = await fetch('https://my-json-server.typicode.com/chrisboakes/preact-demo/politics-articles');
 		const data = await res.json();
-		let content = '';
+		let content = [];
 
 		if (res.status === 200) {
 			data.forEach( result => {
-				content += result.title;
+				result.link = `${ result.section }/${ result.slug }`;
+				content.push(result);
 			});
 		} else {
-			content = 'No results';
+			content = ['No results'];
 		}
 
 		this.setState({ content });
-	}
+	};
 
-	render({}, { content='Loading' }) {
+	render({}, { content=[{title: 'Loading'}] }) {
 		return (
 			<div class={style.politics}>
 				<h1>Politics</h1>
 				<ul>
-					{content}
+					{
+						content.map( item => (
+							<li>
+								{ item.link ? (
+									<a href={ item.link }>{item.title}</a>
+								) : item.title  }
+							</li>
+						))
+					}
 				</ul>
 			</div>
 		);
-	}
+	};
 }
