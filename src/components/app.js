@@ -28,8 +28,8 @@ export default class App extends Component {
 						<Home path="/" />
 						<Politics path="/politics/" />
 						<News path="/news/" />
-						<Article path="/politics/:article" />
-						<Article path="/news/:article" />
+						<Article path="/politics/:article" section="politics" />
+						<Article path="/news/:article" section="news" />
 					</Router>
 				</main>
 			</div>
