@@ -21,15 +21,11 @@ export default class Article extends Component {
 
 	getPost({ post }) {
 		return (
-			<div>
-				<h1>{ post.title }</h1>
-
-				<p>{ post.standfirst }</p>
-
-				<div class='content'>
-					{ post.content }
-				</div>
-			</div>
+		<div>
+			<h1>{post.title}</h1>
+			<p>{post.standfirst}</p>
+			<div class="content" dangerouslySetInnerHTML={{ __html: post.content }} />
+		</div>
 		);
 	}
 
