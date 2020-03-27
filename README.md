@@ -1,4 +1,17 @@
-# Preact POC
+# Preact
+
+## POC
+
+Project repo: [https://github.com/chrisboakes/preact-demo](https://github.com/chrisboakes/preact-demo)
+
+Built project: TBC
+
+I used the [preact-cli](https://github.com/preactjs/preact-cli) to prototype this POC and used some dummy data to imitate the content API.
+
+This POC is a mixture of statically generated, server-side rendered and client side rendered data:
+
+- [Static rendering](#Static-Rendering): the home page
+- [Client-side rendering](#Client-Side-Rendering): the politics page and the politics articles
 
 ## Further research
 
