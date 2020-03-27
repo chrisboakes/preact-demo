@@ -10,8 +10,7 @@
     "build": "preact build",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src",
-    "test": "jest"
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": "preact",
