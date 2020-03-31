@@ -1,8 +1,9 @@
-const News = () => (
-	<div>
-		<h1>News</h1>
-		<p>This is news</p>
-	</div>
-);
+import { h, Component } from 'preact';
 
-export default News;
+export default class News extends Component {
+	render() {
+		return (
+			<div>News Page</div>
+		);
+	}
+}

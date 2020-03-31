@@ -10,7 +10,6 @@ import News from '../routes/news';
 import Article from '../routes/article';
 
 export default class App extends Component {
-	
 	/** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
@@ -19,12 +18,12 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 	};
 
-	render() {
+	render(props) {
 		return (
 			<div id="app">
 				<Header />
 				<main>
-					<Router onChange={this.handleRoute}>
+					<Router url={props.url} onChange={this.handleRoute}>
 						<Home path="/" />
 						<Politics path="/politics/" />
 						<News path="/news/" />
