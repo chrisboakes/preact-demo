@@ -13,6 +13,7 @@ export default class Politics extends Component {
 		return (
 			<div>
 				<h1>Politics</h1>
+				<h2>This page is server side rendered</h2>
 
 				<ul>
 					{
