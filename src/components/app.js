@@ -20,18 +20,18 @@ export default class App extends Component {
 
 	render(props) {
 		return (
-			<div id="app">
-				<Header />
-				<main>
-					<Router url={props.url} onChange={this.handleRoute}>
-						<Home path="/" />
-						<Politics path="/politics/" />
-						<News path="/news/" />
-						<Article path="/politics/:article" section="politics" />
-						<Article path="/news/:article" section="news" />
-					</Router>
-				</main>
-			</div>
+		<div id="app">
+			<Header />
+			<main>
+			<Router url={props.url} onChange={this.handleRoute}>
+				<Home path="/" />
+				<Politics path="/politics/" content={props.content} />
+				<News path="/news/" />
+				<Article path="/politics/:article" section="politics" />
+				<Article path="/news/:article" section="news" />
+			</Router>
+			</main>
+		</div>
 		);
 	}
 }
