@@ -13,6 +13,8 @@ This POC is a mixture of statically generated, server-side rendered and client s
 - [Static rendering](#Static-Rendering): the home page
 - [Client-side rendering](#Client-Side-Rendering): the politics page and the politics articles
 
+- Cannot mount on component - must be done on server request for SSR
+
 ## Further research
 
 - Dynamic `<title>` and metadata
