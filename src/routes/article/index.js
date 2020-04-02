@@ -5,7 +5,7 @@ export default class Article extends Component {
 		super(props);
 	}
 
-	async componentDidMount() {
+	async fetchContent() {
 		const res = await fetch(`https://my-json-server.typicode.com/chrisboakes/preact-demo/${this.props.article}`);
 		const data = await res.json();
 		let post = {};
@@ -19,12 +19,20 @@ export default class Article extends Component {
 		this.setState({ post });
 	}
 
+	componentDidMount() {
+		if (window.__content__) {
+			this.setState({ post: window.__content__ });
+		} else {
+			this.fetchContent();
+		}
+	}
+
 	getPost({ post }) {
 		return (
 		<div>
-			<h1>{post.title}</h1>
+			<h1>{ post.title }</h1>
 			<h2>This page is { this.props.rendered } side rendered</h2>
-			<p>{post.standfirst}</p>
+			<p>{ post.standfirst }</p>
 			<div class="content" dangerouslySetInnerHTML={{ __html: post.content }} />
 		</div>
 		);

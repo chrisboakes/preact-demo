@@ -33,6 +33,15 @@ polka()
 			res.end(bodyContent);
 		});
 	})
+	.get("/politics/:article", (req, res) => {
+		data(req.params.article).then(content => {
+			const body = render(h(App, { url: req.url, content: content }));
+			const bodyApp = template.replace(RGX, body);
+			const bodyContent = bodyApp.replace('/** ::CONTENT:: **/', JSON.stringify(content));
+			res.setHeader("Content-Type", "text/html");
+			res.end(bodyContent);
+		});
+	})
 	.get("*", (req, res) => {
 		let body = render(h(App, { url: req.url, content: null }));
 		res.setHeader("Content-Type", "text/html");
