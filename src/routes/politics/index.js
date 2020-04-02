@@ -1,15 +1,31 @@
 import { h, Component } from 'preact';
 
 export default class Politics extends Component {
+	async fetchContent() {
+		const res = await fetch(`https://my-json-server.typicode.com/chrisboakes/preact-demo/politics-articles`);
+		const data = await res.json();
+		let clientData = {};
+
+		if (res.status === 200) {
+			clientData = data;
+		}
+
+		this.setState({ clientData });
+	}
+
 	componentDidMount() {
-		if (window.__content__) {
-			this.setState({ newData: window.__content__ });
+		if (window.__content__ && window.__content__.length > 0) {
+			this.setState({ clientData: window.__content__ });
 		} else {
-			this.setState({ newData: ["Loading"] });
+			this.fetchContent();
 		}
 	}
 
-	render({content}, {newData}) {
+	render({ content }, { clientData }) {
+		if (clientData) {
+			content = clientData
+		}
+
 		return (
 			<div>
 				<h1>Politics</h1>
@@ -17,16 +33,7 @@ export default class Politics extends Component {
 
 				<ul>
 					{
-						content && newData ? content.map(item => (
-							<li>
-								{
-									<a href={item.section + "/" + item.slug}>{item.title}</a>
-								}
-							</li>
-						)) : ''
-					}
-					{
-						newData ? newData.map(item => (
+						content && content.length > 0 ? content.map(item => (
 							<li>
 								{
 									<a href={item.section + "/" + item.slug}>{item.title}</a>
