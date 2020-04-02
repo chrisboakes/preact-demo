@@ -25,7 +25,7 @@ function setHeaders(res, file) {
 polka()
 	.use(sirv("build", { setHeaders }))
 	.get("/politics", (req, res) => {
-		data().then(content => {
+		data('politics-articles').then(content => {
 			const body = render(h(App, { url: req.url, content: content }));
 			const bodyApp = template.replace(RGX, body);
 			const bodyContent = bodyApp.replace('/** ::CONTENT:: **/', JSON.stringify(content));
