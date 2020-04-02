@@ -23,6 +23,7 @@ export default class Article extends Component {
 		return (
 		<div>
 			<h1>{post.title}</h1>
+			<h2>This page is { this.props.rendered } side rendered</h2>
 			<p>{post.standfirst}</p>
 			<div class="content" dangerouslySetInnerHTML={{ __html: post.content }} />
 		</div>
