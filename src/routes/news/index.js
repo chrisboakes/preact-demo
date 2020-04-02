@@ -9,7 +9,6 @@ export default class Politics extends Component {
 
 		if (res.status === 200) {
 			data.forEach(result => {
-				result.link = `${result.section}/${result.slug}`;
 				content.push(result);
 			});
 		} else {
@@ -28,9 +27,9 @@ export default class Politics extends Component {
 					{
 						content.map(item => (
 							<li>
-								{item.link ? (
-									<a href={item.link}>{item.title}</a>
-								) : item.title}
+								{
+									<a href={item.section + "/" + item.slug}>{item.title}</a>
+								}
 							</li>
 						))
 					}

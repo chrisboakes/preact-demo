@@ -19,18 +19,18 @@ export default class Politics extends Component {
 					{
 						content && newData ? content.map(item => (
 							<li>
-								{item.link ? (
-									<a href={item.link}>{item.title}</a>
-								) : item.title}
+								{
+									<a href={item.section + "/" + item.slug}>{item.title}</a>
+								}
 							</li>
 						)) : ''
 					}
 					{
 						newData ? newData.map(item => (
 							<li>
-								{item.link ? (
-									<a href={item.link}>{item.title}</a>
-								) : item.title}
+								{
+									<a href={item.section + "/" + item.slug}>{item.title}</a>
+								}
 							</li>
 						)) : ''
 					}
