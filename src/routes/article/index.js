@@ -27,21 +27,25 @@ export default class Article extends Component {
 		}
 	}
 
-	getPost({ post }) {
+	getPost({ content }) {
 		return (
 		<div>
-			<h1>{ post.title }</h1>
+			<h1>{ content.title }</h1>
 			<h2>This page is { this.props.rendered } side rendered</h2>
-			<p>{ post.standfirst }</p>
-			<div class="content" dangerouslySetInnerHTML={{ __html: post.content }} />
+			<p>{ content.standfirst }</p>
+			<div class="content" dangerouslySetInnerHTML={{ __html: content.content }} />
 		</div>
 		);
 	}
 
-	render({}, { post = null }) {
+	render({ content = null }, { post = null }) {
+		if (post) {
+			content = post
+		}
+
 		return (
 			<div>
-				{ post ?  this.getPost({ post }) : '' }
+				{ content ?  this.getPost({ content }) : '' }
 			</div>
 		);
 	}

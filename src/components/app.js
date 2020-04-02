@@ -27,7 +27,7 @@ export default class App extends Component {
 				<Home path="/" />
 				<Politics path="/politics/" content={props.content} />
 				<News path="/news/" />
-				<Article path="/politics/:article" section="politics" rendered="server" />
+				<Article path="/politics/:article" section="politics" content={props.content} rendered="server" />
 				<Article path="/news/:article" section="news" rendered="client" />
 			</Router>
 			</main>
