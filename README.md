@@ -24,15 +24,15 @@ This POC is a mixture of statically generated, server-side rendered and client s
 ### Pros
 
 - Client-side is lightweight and tiny - small overhead for a lot of features
-- Intuitive component structure is easy to reuse modules of functionality
+- Intuitive component structure is easy to reuse blocks of code
 - Nice separation of CSS and JavaScript (CSS sits in its own file)
 - Data binding/state management is helpful if content is being updated on the fly
 
 ### Cons
 
-- Seems easiest to work with client-side. SSR was difficult to implement and not well documented. Required almost a custom approach to render data this way.
+- Seems easiest to work with client-side. SSR was difficult to implement and not well documented. Required a lot of work to render data this way correctly.
 - Could not stop the page from double painting on SSR'd pages. The DOM loads the content from the server, then Preact kicks in on the client-side and hydrates the DOM causing a double paint.
-- Cannot make server side call from component itself. It must be done on the server route config (see `server.js` in the repo) and passed into the component.
+- Cannot make server-side call from component itself. It must be done on the server route config (see `server.js` in the repo) and passed into the component.
 - Writing HTML in JavaScript feels awkward
 - Googling for answers/information was difficult because it predominantly returned *React* information rather than *Preact*
 
@@ -40,9 +40,9 @@ This POC is a mixture of statically generated, server-side rendered and client s
 
 - Dynamic `<title>` and metadata
 - Caching mechanism via service workers needs more exploration
-- Offline caching
+- Offline functionality
 - Stopping double paint (if possible)
-- Implement a scalable SSR solution
+- A scalable SSR solution
 
 ## Resources
 
@@ -51,7 +51,7 @@ This POC is a mixture of statically generated, server-side rendered and client s
 - [Preact Render To String](https://github.com/preactjs/preact-render-to-string)
 - [Preact PWA](https://preactjs.com/guide/v10/progressive-web-apps/)
 - [Approach to SSR](https://www.youtube.com/watch?v=qJyKZ6txShU) (preceded by this [React tutorial](https://www.youtube.com/watch?v=82tZAPMHfT4))
-- componentWillMount vs componentDidMount [lifecycle explanation](https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/)
+- `componentWillMount` vs `componentDidMount` [lifecycle explanation](https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/)
 - [Patterns for data fetching](https://blog.logrocket.com/patterns-for-data-fetching-in-react-981ced7e5c56/) in React (same approach can be applied to Preact)
 
 ## Rendering Types
