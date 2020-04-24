@@ -13,9 +13,8 @@ It supports [static rendering](https://preactjs.com/cli/pre-rendering/) out of t
 
 I used the [preact-cli](https://github.com/preactjs/preact-cli) to prototype this POC (using the [default theme](https://github.com/preactjs-templates/default)) and used some dummy data to imitate the content API.
 
-This POC is a mixture of statically generated, server-side rendered and client side rendered data:
+This POC is a mixture of server-side rendered and client-side rendered data:
 
-- [Static rendering](#Static-Rendering): the home page
 - [Server-side rendering](#Server-Side-Rendering): the politics page and the politics articles
 - [Client-side rendering](#Client-Side-Rendering): the news page and the news articles
 

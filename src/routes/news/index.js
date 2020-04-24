@@ -22,7 +22,7 @@ export default class Politics extends Component {
 		return (
 			<div class={style.politics}>
 				<h1>News</h1>
-				<h2>This page is client side rendered</h2>
+				<h2>This page is client-side rendered</h2>
 				<ul>
 					{
 						content.map(item => (
